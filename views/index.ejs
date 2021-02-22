@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Верстка ДОМ</title>
+    <meta name="author" content="www.sitesoft.ru">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-TextLayoutMetrics" content="gdi">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="theme-color" content="#fff">
+    <link type="image/x-icon" href="static/img/favicon.ico" rel="icon">
+    <link type="image/x-icon" href="static/img/favicon.ico" rel="shortcut icon">
+  <link href="styles/vendors.4aa3.css" rel="stylesheet"><link href="styles/app.4839.css" rel="stylesheet"></head>
+  <body>
+    <!--noindex-->
+    <noscript>
+      <div style="padding: 24px; color: #fff; width: 100%; portal-menu-color: #dd5656; font-weight: 700; text-align: center; position: fixed; z-index: 999999">Для корректной работы сайта необходимо<a href="nojs-browser.html">включить поддержку JavaScript</a></div>
+    </noscript>
+    <div id="outdated">
+      <h6>Ваш браузер устарел!</h6>
+      <p>Обновите ваш браузер для правильного отображения этого сайта.<a id="btnUpdateBrowser" href="update-browser.html">Обновить мой браузер</a></p>
+      <link rel="stylesheet" type="text/css" href="static/libs/outdatedbrowser/outdatedbrowser.min.css">
+      <script src="static/libs/outdatedbrowser/outdatedbrowser.min.js"></script>
+      <script>
+        window.onload = function() {
+          $(function() {
+            if (!!window.outdatedBrowser) {
+              $("#outdated").css("display") == "block" ? $("#outdated").nextAll('*').remove() : $("#outdated").remove()
+            }
+          })
+        }
+        
+        //Проверка на IE10+
+        outdatedBrowser({lowerThan: "transform", languagePath: ""})
+      </script>
+    </div>
+    <!--noindex-->
+    <div class="app" id="app">
+      <main class="main" role="main">
+        <section class="section">
+          <div class="container">
+            <div class="content">
+              <h1 class="mb-4">Верстка ДОМ</h1>
+              <ol>
+                <li><a href="chatportal" target="_blank"> Чат Портал </a></li>
+                <li><a href="balance" target="_blank"> Баланс</a></li>
+                <li><a href="avtoritet" target="_blank"> Авторитет</a></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div><script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js"></script>
+    <!--JS файлы которые начинаются с markup_ и example_ используются ТОЛЬКО в верстке, к себе не тянуть и не подключать!-->
+  <script type="text/javascript" src="scripts/runtime.afed.js"></script><script type="text/javascript" src="scripts/vendors.a652.js"></script><script type="text/javascript" src="scripts/app.1800.js"></script><script type="text/javascript" src="scripts/markup_pageList.022d.js"></script></body>
+</html>
