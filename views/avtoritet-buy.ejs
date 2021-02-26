@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Покупка авторитета</title>
+    <meta name="author" content="@Noname2">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-TextLayoutMetrics" content="gdi">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="theme-color" content="#fff">
+    <link type="image/x-icon" href="static/img/favicon.ico" rel="icon">
+    <link type="image/x-icon" href="static/img/favicon.ico" rel="shortcut icon">
+    <link href="styles/vendors.4aa3.css" rel="stylesheet">
+    <link href="styles/app.c77e.css" rel="stylesheet">
+</head>
+<body>
+<!--noindex-->
+<div class="app" id="app">
+    <header class="header">
+        <div class="header__text">
+            <%= title %>
+        </div>
+    </header>
+    <main class="main" role="main">
+        <div class="content-width">
+            <section class="js-buy-avtoritet">
+                <div class="portal-menu">
+                    <div class="portal-menu__item" data-price-service='50' data-toggle-popup="confirmAvtoritet"><span
+                                class="portal-menu__image-wrapper"><img src="../../static/img/avtoritet-icon.png"
+                                                                        alt="авторитет">Купить 50 авторитета</span>
+                        <div class="portal-menu__arrow-wrapper">
+                            <div class="portal-menu__arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-menu__item" data-price-service='100' data-toggle-popup="confirmAvtoritet"><span
+                                class="portal-menu__image-wrapper"><img src="../../static/img/avtoritet-icon.png"
+                                                                        alt="авторитет">Купить 100 авторитета</span>
+                        <div class="portal-menu__arrow-wrapper">
+                            <div class="portal-menu__arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-menu__item" data-price-service='200' data-toggle-popup="confirmAvtoritet"><span
+                                class="portal-menu__image-wrapper"><img src="../../static/img/avtoritet-icon.png"
+                                                                        alt="авторитет">Купить 200 авторитета</span>
+                        <div class="portal-menu__arrow-wrapper">
+                            <div class="portal-menu__arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-menu__item" data-price-service='300' data-toggle-popup="confirmAvtoritet"><span
+                                class="portal-menu__image-wrapper"><img src="../../static/img/avtoritet-icon.png"
+                                                                        alt="авторитет">Купить 300 авторитета</span>
+                        <div class="portal-menu__arrow-wrapper">
+                            <div class="portal-menu__arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-menu__item" data-price-service='500' data-toggle-popup="confirmAvtoritet"><span
+                                class="portal-menu__image-wrapper"><img src="../../static/img/avtoritet-icon.png"
+                                                                        alt="авторитет">Купить 500 авторитета</span>
+                        <div class="portal-menu__arrow-wrapper">
+                            <div class="portal-menu__arrow">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portal-menu__item" data-price-service='1000' data-toggle-popup="confirmAvtoritet"><span
+                                class="portal-menu__image-wrapper"><img src="../../static/img/avtoritet-icon.png"
+                                                                        alt="авторитет">Купить 1000 авторитета</span>
+                        <div class="portal-menu__arrow-wrapper">
+                            <div class="portal-menu__arrow">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="b-popup" id="confirmAvtoritet">
+            <div class="b-popup__popup-content">
+                <div class="b-popup__title-wrapper">
+                    <div class="text text--small"> Вы действительно хотите купить авторитет?
+                    </div>
+                </div>
+                <div class="b-popup__confirm-buttons-wrapper">
+                    <div class="b-popup__button" data-confirm="true">
+                        <div class="text text--small">Да
+                        </div>
+                    </div>
+                    <div class="b-popup__button" data-confirm="false">
+                        <div class="text text--small">Нет
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div>
+        </div>
+        <span class="footer__time">13:44</span>
+        <div class="footer__text">
+            назад
+        </div>
+    </footer>
+</div>
+<div class="b-popup" id="error-popup">
+    <div class="b-popup__popup-content">
+        <div class="b-popup__title-wrapper">
+            <div class="text text--small text--red">Ошибка сервисов, попробуйте запрос позже...
+            </div>
+        </div>
+        <div class="b-popup__confirm-buttons-wrapper">
+            <div class="b-popup__button">
+                <div class="text text--small">OK
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="b-popup" id="preloader">
+    <div class="b-popup__popup-content"><div class="lds-ring">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<div class="b-popup" id="enough-money">
+    <div class="b-popup__popup-content">
+        <div class="b-popup__title-wrapper">
+            <div class="text text--small text--red">Ошибка, пополните баланс
+            </div>
+        </div>
+        <div class="b-popup__confirm-buttons-wrapper">
+            <div class="b-popup__button">
+                <div class="text text--small">OK
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="scripts/runtime.afed.js"></script>
+<script type="text/javascript" src="scripts/NetworkInterface.js"></script>
+<script type="text/javascript" src="scripts/backendAjax/avtoritetBuyActions/index.js"></script>
+<script type="text/javascript" src="scripts/vendors.05e5.js"></script>
+<script type="text/javascript" src="scripts/app.06c4.js"></script>
+</body>
+</html>

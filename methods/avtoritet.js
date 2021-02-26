@@ -1,19 +1,41 @@
-/**
- * Сортировка наивысшего авторитета у пользователей для чат порталаь(4 человека)
- * @param users
- */
+const Magic = require('../const');
 const User = require('../mongoose/user');
+const Helpers = require('../helpers')
+const ObjectId = require('mongoose').Types.ObjectId;
 
-function SerializeBiggestAvtoritet() {
-  return  User.findUsers({
+/**
+ * Получить список авторитетов чата
+ * @returns {Promise<T | *[]>}
+ */
+function getBiggestAvtoritet() {
+  return User.findUsers({
     rating: {$ne: null}
-  })
+  }).then(users => users.sort(Helpers.byField('rating')))
+    .catch(e => {
+      console.log(e)
+      return []
+    })
 }
 
+function buyAvtoritet(userId, counts) {
+  User.findSingleUser({
+    _id: userId
+  })
+    .then(r => {
+      User.updateUsers(
+        {_id: ObjectId(userId)},
+        {rating: r.rating + counts,
+          /**
+           * Умножаем стоимость услуги на 1000 тк как баланс в бд * 1000
+           */
+          balace:r.balace - counts * Magic.deltaBalance},
+        () => {
+        }).then(r => console.log(r))
+    })
 
+}
 
-// function byField(field) {
-//   return (a, b) => a[field] > b[field] ? 1 : -1;
-// }
-
-exports.SerializeBiggestAvtoritet = SerializeBiggestAvtoritet;
+module.exports = {
+  getBiggestAvtoritet,
+  buyAvtoritet
+};

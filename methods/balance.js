@@ -1,20 +1,26 @@
 const ObjectId = require('mongoose').Types.ObjectId;
 const User = require('../mongoose/user');
+const Magic = require('../const')
 
 /**
- * Проверка баланса длятпокупки услуги
+ * Проверка баланса для покупки услуги
  * @param {String} userId
  * @param {Number} priceService
- * @returns {boolean}
+ * @returns {Promise<{allowed: boolean}>}
  */
-function checkBalance(userId,priceService) {
-    if (ObjectId.isValid(userId)) {
-        const user = User.findUsers({
-            _id: ObjectId(userId)
-        },)
-        const balance  = user.balace
-        return balance > priceService;
-    }
-    return false
+function checkBalance(userId, priceService) {
+  if (ObjectId.isValid(userId)) {
+    return User.findSingleUser({
+      _id: ObjectId(userId)
+    }).then(usr => {
+      return {
+        allowed: priceService <= usr.balace / Magic.deltaBalance
+      }
+    })
+      .catch(e => e)
+  }
 }
 
+module.exports = {
+  checkBalance
+}

@@ -8,12 +8,29 @@ function findUsers(query) {
     return db.User.find(query).exec()
 }
 /**
- * Обновление Пользователей
+ * Поиск Пользователя
  * @param {Object} query
- * @param {callback} cb
  */
-function updateUsers(query, cb) {
-    db.User.updateOne(name, cb);
+function findSingleUser(query) {
+  return db.User.findOne(query).exec()
+}
+/**
+ * Обновление Пользователей
+ * @param filter
+ * @param {Object} query
+ * @param {{price: *}} cb
+ */
+function updateUsers(filter, query, cb) {
+  console.log(filter,query)
+    return  db.User.updateOne(filter,
+      { $set: query}, function (err, docs) {
+          if (err){
+              console.log(err)
+          }
+          else{
+              console.log("Updated Docs : ", docs);
+          }
+      }).exec();
 }
 /**
  * Создание Пользователей
@@ -25,4 +42,8 @@ function createUsers(fields, cb = null) {
 }
 
 
-module.exports.findUsers = findUsers;
+module.exports = {
+    findUsers,
+    updateUsers,
+    findSingleUser
+}
