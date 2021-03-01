@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Мобильный Баланс</title>
+    <meta name="author" content="@Noname2">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-TextLayoutMetrics" content="gdi">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="theme-color" content="#fff">
+    <link type="image/x-icon" href="static/img/favicon.ico" rel="icon">
+    <link type="image/x-icon" href="static/img/favicon.ico" rel="shortcut icon">
+    <link href="styles/vendors.c7a0.css" rel="stylesheet"><link href="styles/app.0a2f.css" rel="stylesheet"></head>
+  <body>
+    <div class="app" id="app">
+      <header class="header">
+        <div class="header__text"><%=title%>
+        </div>
+      </header>
+      <main class="main" role="main">
+        <div class="content-width">
+          <section class="section-balance-mobile">
+            <form action="#" method="POST">
+              <div class="banner mb-4">
+                <div class="text-center">
+                  <div class="text text--s-normal">Доступно только для российских операторов МТС,Мегафон и Билайн
+                  </div><hr class="banner__hr"/>
+                  <div class="text text--s-normal mt-2">Введите Ваш номер телефона в формате xxx yyy yy yy (например 9031234567)
+                  </div><input class="banner__input" placeholder="ваш номер" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+                  <div class="text text--s-normal mt-2">На данный телефон должна прийти смс с дальнейшими инструкциями по пополнению
+                  </div><hr class="banner__hr"/>
+                  <div class="text text--s-normal mt-2">Введите сумму пополнения
+                  </div><img class="banner__img" src="../../../static/img/rub.png" alt="rub" title=""/>
+                  <select class="banner__select">
+                    <option>50</option>
+                    <option>100</option>
+                    <option>200</option>
+                  </select>
+                  <div class="text text--s-normal mt-2">Вы получите:
+                  </div>
+                  <div class="row align-items-center justify-content-center">
+                    <div class="text text--bold text--big" data-amount>50
+                    </div><img class="banner__img" src="../../../static/img/chattle.png" alt="rub" title=""/>
+                  </div>
+                </div>
+              </div>
+              <div class="portal-menu">
+                <button type="submit" style="width:100%">
+                  <div class="portal-menu__item"><span class="portal-menu__image-wrapper"><img src="../../static/img/sms-icon.png" alt="баланс">Пополнить</span>
+                    <div class="portal-menu__arrow-wrapper">
+                      <div class="portal-menu__arrow">
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div>
+        </div><span class="footer__time">13:44</span>
+        <div class="footer__text">
+           назад
+        </div>
+      </footer>
+    </div>
+    <div class="b-popup" id="error-popup">
+      <div class="b-popup__popup-content">
+        <div class="b-popup__title-wrapper">
+          <div class="text text--small text--red">Ошибка сервисов, попробуйте запрос позже...
+          </div>
+        </div>
+        <div class="b-popup__confirm-buttons-wrapper">
+          <div class="b-popup__button">
+            <div class="text text--small">OK
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="b-popup" id="preloader">
+      <div class="b-popup__popup-content"><div class="lds-ring">
+<div></div>
+<div></div>l
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</div>
+      </div>
+    </div>
+    <div class="b-popup" id="enough-money">
+      <div class="b-popup__popup-content">
+        <div class="b-popup__title-wrapper">
+          <div class="text text--small text--red">Ошибка, пополните баланс
+          </div>
+        </div>
+        <div class="b-popup__confirm-buttons-wrapper">
+          <div class="b-popup__button">
+            <div class="text text--small">OK
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="scripts/runtime.afed.js"></script><script type="text/javascript" src="scripts/vendors.b460.js"></script><script type="text/javascript" src="scripts/app.3e9d.js"></script></body>
+</html>
