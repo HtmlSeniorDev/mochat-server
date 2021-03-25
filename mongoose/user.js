@@ -21,7 +21,6 @@ function findSingleUser(query) {
  * @param {{price: *}} cb
  */
 function updateUsers(filter, query, cb) {
-  console.log(filter,query)
     return  db.User.updateOne(filter,
       { $set: query}, function (err, docs) {
           if (err){
@@ -37,7 +36,7 @@ function updateUsers(filter, query, cb) {
  * @param {Object} fields
  * @param {callback} cb
  */
-function createUsers(fields, cb = null) {
+function createUsers(fields, cb) {
     db.User.create(fields, cb);
 }
 
