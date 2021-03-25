@@ -10,6 +10,7 @@ const balanceRouter = require('./routes/balance');
 const chatportalRouter = require('./routes/chatportal');
 const friendsRouter = require('./routes/friends');
 const giftsRouter = require('./routes/gifts');
+const gameRouter = require('./routes/game');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -26,6 +27,8 @@ app.use('/', avtoritetBuyRouter);
 app.use('/', balanceRouter);
 app.use('/', friendsRouter);
 app.use('/', giftsRouter);
+app.use('/', gameRouter);
+
 app.listen(process.env.port || 3000);
 
 console.log('Running at Port 3000');

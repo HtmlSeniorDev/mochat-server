@@ -1,0 +1,992 @@
+
+<HTML>
+<HEAD>
+    <TITLE>Подкидной дурак на ява скрипт онлайн</TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="Онлайн игра подкидной дурак на ява скрипт. Вы и компьютер берете из карточной колоды по шесть карт. Козырем можно покрыть меньшую козырную карту">
+    <meta name="keywords" content="подкидной дурак онлайн игра карты игра козырь">
+    <link REL="SHOTCUT ICON" HREF="http://softholm.com/favicon.ico">
+    <style>
+
+        BODY {
+            SCROLLBAR-FACE-COLOR:#8ed8f8;
+            SCROLLBAR-HIGHLIGHT-COLOR:#8ed8f8;
+            SCROLLBAR-SHADOW-COLOR:"black" ;
+            SCROLLBAR-ARROW-COLOR: "Black";
+            SCROLLBAR-BASE-COLOR:"black";
+            scrollbar-dark-shadow-color: "black";
+        }
+
+        .button {
+            background-color:#8ed8f8;
+            border-width:0;
+            color: blue;
+        }
+        #panel1 {POSITION: absolute; TOP:10; LEFT:10; Z-INDEX: 200;}
+
+        #cardc0 {POSITION: absolute; TOP:50; LEFT:10; Z-INDEX: 0; WIDTH: 71; HEIGHT: 96;}
+        #cardc1 {POSITION: absolute; TOP:50; LEFT:30; Z-INDEX: 1; WIDTH: 71; HEIGHT: 96;}
+        #cardc2 {POSITION: absolute; TOP:50; LEFT:50; Z-INDEX: 2; WIDTH: 71; HEIGHT: 96;}
+        #cardc3 {POSITION: absolute; TOP:50; LEFT:70; Z-INDEX: 3; WIDTH: 71; HEIGHT: 96;}
+        #cardc4 {POSITION: absolute; TOP:50; LEFT:90; Z-INDEX: 4; WIDTH: 71; HEIGHT: 96;}
+        #cardc5 {POSITION: absolute; TOP:50; LEFT:110; Z-INDEX: 5; WIDTH: 71; HEIGHT: 96;}
+        #cardc6 {POSITION: absolute; TOP:50; LEFT:130; Z-INDEX: 6; WIDTH: 71; HEIGHT: 96;}
+        #cardc7 {POSITION: absolute; TOP:50; LEFT:150; Z-INDEX: 7; WIDTH: 71; HEIGHT: 96;}
+        #cardc8 {POSITION: absolute; TOP:50; LEFT:170; Z-INDEX: 8; WIDTH: 71; HEIGHT: 96;}
+        #cardc9 {POSITION: absolute; TOP:50; LEFT:190; Z-INDEX: 9; WIDTH: 71; HEIGHT: 96;}
+        #cardc10 {POSITION: absolute; TOP:50; LEFT:210; Z-INDEX: 10; WIDTH: 71; HEIGHT: 96;}
+        #cardc11 {POSITION: absolute; TOP:50; LEFT:230; Z-INDEX: 11; WIDTH: 71; HEIGHT: 96;}
+        #cardc12 {POSITION: absolute; TOP:50; LEFT:250; Z-INDEX: 12; WIDTH: 71; HEIGHT: 96;}
+        #cardc13 {POSITION: absolute; TOP:50; LEFT:270; Z-INDEX: 13; WIDTH: 71; HEIGHT: 96;}
+        #cardc14 {POSITION: absolute; TOP:50; LEFT:290; Z-INDEX: 14; WIDTH: 71; HEIGHT: 96;}
+        #cardc15 {POSITION: absolute; TOP:50; LEFT:310; Z-INDEX: 15; WIDTH: 71; HEIGHT: 96;}
+        #cardc16 {POSITION: absolute; TOP:50; LEFT:330; Z-INDEX: 16; WIDTH: 71; HEIGHT: 96;}
+        #cardc17 {POSITION: absolute; TOP:50; LEFT:350; Z-INDEX: 17; WIDTH: 71; HEIGHT: 96;}
+        #cardc18 {POSITION: absolute; TOP:50; LEFT:370; Z-INDEX: 18; WIDTH: 71; HEIGHT: 96;}
+        #cardc19 {POSITION: absolute; TOP:50; LEFT:390; Z-INDEX: 19; WIDTH: 71; HEIGHT: 96;}
+        #cardc20 {POSITION: absolute; TOP:50; LEFT:410; Z-INDEX: 20; WIDTH: 71; HEIGHT: 96;}
+        #cardc21 {POSITION: absolute; TOP:50; LEFT:430; Z-INDEX: 21; WIDTH: 71; HEIGHT: 96;}
+        #cardc22 {POSITION: absolute; TOP:50; LEFT:450; Z-INDEX: 22; WIDTH: 71; HEIGHT: 96;}
+        #cardc23 {POSITION: absolute; TOP:50; LEFT:470; Z-INDEX: 23; WIDTH: 71; HEIGHT: 96;}
+        #cardc24 {POSITION: absolute; TOP:50; LEFT:490; Z-INDEX: 24; WIDTH: 71; HEIGHT: 96;}
+        #cardc25 {POSITION: absolute; TOP:50; LEFT:510; Z-INDEX: 25; WIDTH: 71; HEIGHT: 96;}
+        #cardc26 {POSITION: absolute; TOP:50; LEFT:530; Z-INDEX: 26; WIDTH: 71; HEIGHT: 96;}
+        #cardc27 {POSITION: absolute; TOP:50; LEFT:550; Z-INDEX: 27; WIDTH: 71; HEIGHT: 96;}
+        #cardc28 {POSITION: absolute; TOP:50; LEFT:570; Z-INDEX: 28; WIDTH: 71; HEIGHT: 96;}
+        #cardc29 {POSITION: absolute; TOP:50; LEFT:590; Z-INDEX: 29; WIDTH: 71; HEIGHT: 96;}
+        #cardc30 {POSITION: absolute; TOP:50; LEFT:610; Z-INDEX: 30; WIDTH: 71; HEIGHT: 96;}
+        #cardc31 {POSITION: absolute; TOP:50; LEFT:630; Z-INDEX: 31; WIDTH: 71; HEIGHT: 96;}
+        #cardc32 {POSITION: absolute; TOP:50; LEFT:650; Z-INDEX: 32; WIDTH: 71; HEIGHT: 96;}
+        #cardc33 {POSITION: absolute; TOP:50; LEFT:670; Z-INDEX: 33; WIDTH: 71; HEIGHT: 96;}
+        #cardc34 {POSITION: absolute; TOP:50; LEFT:690; Z-INDEX: 34; WIDTH: 71; HEIGHT: 96;}
+        #cardc35 {POSITION: absolute; TOP:50; LEFT:710; Z-INDEX: 35; WIDTH: 71; HEIGHT: 96;}
+
+        #cardw0 {POSITION: absolute;  TOP:166; LEFT:10; Z-INDEX: 37; WIDTH: 71; HEIGHT: 96;}
+        #cardw1 {POSITION: absolute;  TOP:196; LEFT:20; Z-INDEX: 38; WIDTH: 71; HEIGHT: 96;}
+        #cardw2 {POSITION: absolute;  TOP:166; LEFT:110; Z-INDEX: 39; WIDTH: 71; HEIGHT: 96;}
+        #cardw3 {POSITION: absolute;  TOP:196; LEFT:120; Z-INDEX: 40; WIDTH: 71; HEIGHT: 96;}
+        #cardw4 {POSITION: absolute;  TOP:166; LEFT:210; Z-INDEX: 41; WIDTH: 71; HEIGHT: 96;}
+        #cardw5 {POSITION: absolute;  TOP:196; LEFT:220; Z-INDEX: 42; WIDTH: 71; HEIGHT: 96;}
+        #cardw6 {POSITION: absolute;  TOP:166; LEFT:310; Z-INDEX: 43; WIDTH: 71; HEIGHT: 96;}
+        #cardw7 {POSITION: absolute;  TOP:196; LEFT:320; Z-INDEX: 44; WIDTH: 71; HEIGHT: 96;}
+        #cardw8 {POSITION: absolute;  TOP:166; LEFT:410; Z-INDEX: 45; WIDTH: 71; HEIGHT: 96;}
+        #cardw9 {POSITION: absolute;  TOP:196; LEFT:420; Z-INDEX: 46; WIDTH: 71; HEIGHT: 96;}
+        #cardw10 {POSITION: absolute; TOP:166; LEFT:510; Z-INDEX: 47; WIDTH: 71; HEIGHT: 96;}
+        #cardw11 {POSITION: absolute; TOP:196; LEFT:520; Z-INDEX: 48; WIDTH: 71; HEIGHT: 96;}
+
+        #btn {POSITION: absolute; TOP:412; LEFT:10; Z-INDEX: 50; WIDTH: 100; HEIGHT: 18;}
+
+        #kozyr {POSITION: absolute; TOP:166; LEFT:610; Z-INDEX: 51; WIDTH: 71; HEIGHT: 96;}
+        #coloda {POSITION: absolute; TOP:166; LEFT:650; Z-INDEX: 52; WIDTH: 71; HEIGHT: 96;}
+        #zkozyr {POSITION: absolute; TOP:204; LEFT:620; Z-INDEX: 53; WIDTH: 39; HEIGHT: 39;}
+
+        #cardh0 {POSITION: absolute; TOP:307; LEFT:10; Z-INDEX: 100; WIDTH: 71; HEIGHT: 96;}
+        #cardh1 {POSITION: absolute; TOP:307; LEFT:30; Z-INDEX: 101; WIDTH: 71; HEIGHT: 96;}
+        #cardh2 {POSITION: absolute; TOP:307; LEFT:50; Z-INDEX: 102; WIDTH: 71; HEIGHT: 96;}
+        #cardh3 {POSITION: absolute; TOP:307; LEFT:70; Z-INDEX: 103; WIDTH: 71; HEIGHT: 96;}
+        #cardh4 {POSITION: absolute; TOP:307; LEFT:90; Z-INDEX: 104; WIDTH: 71; HEIGHT: 96;}
+        #cardh5 {POSITION: absolute; TOP:307; LEFT:110; Z-INDEX: 105; WIDTH: 71; HEIGHT: 96;}
+        #cardh6 {POSITION: absolute; TOP:307; LEFT:130; Z-INDEX: 106; WIDTH: 71; HEIGHT: 96;}
+        #cardh7 {POSITION: absolute; TOP:307; LEFT:150; Z-INDEX: 107; WIDTH: 71; HEIGHT: 96;}
+        #cardh8 {POSITION: absolute; TOP:307; LEFT:170; Z-INDEX: 108; WIDTH: 71; HEIGHT: 96;}
+        #cardh9 {POSITION: absolute; TOP:307; LEFT:190; Z-INDEX: 109; WIDTH: 71; HEIGHT: 96;}
+        #cardh10 {POSITION: absolute; TOP:307; LEFT:210; Z-INDEX: 110; WIDTH: 71; HEIGHT: 96;}
+        #cardh11 {POSITION: absolute; TOP:307; LEFT:230; Z-INDEX: 111; WIDTH: 71; HEIGHT: 96;}
+        #cardh12 {POSITION: absolute; TOP:307; LEFT:250; Z-INDEX: 112; WIDTH: 71; HEIGHT: 96;}
+        #cardh13 {POSITION: absolute; TOP:307; LEFT:270; Z-INDEX: 113; WIDTH: 71; HEIGHT: 96;}
+        #cardh14 {POSITION: absolute; TOP:307; LEFT:290; Z-INDEX: 114; WIDTH: 71; HEIGHT: 96;}
+        #cardh15 {POSITION: absolute; TOP:307; LEFT:310; Z-INDEX: 115; WIDTH: 71; HEIGHT: 96;}
+        #cardh16 {POSITION: absolute; TOP:307; LEFT:330; Z-INDEX: 116; WIDTH: 71; HEIGHT: 96;}
+        #cardh17 {POSITION: absolute; TOP:307; LEFT:350; Z-INDEX: 117; WIDTH: 71; HEIGHT: 96;}
+        #cardh18 {POSITION: absolute; TOP:307; LEFT:370; Z-INDEX: 118; WIDTH: 71; HEIGHT: 96;}
+        #cardh19 {POSITION: absolute; TOP:307; LEFT:390; Z-INDEX: 119; WIDTH: 71; HEIGHT: 96;}
+        #cardh20 {POSITION: absolute; TOP:307; LEFT:410; Z-INDEX: 120; WIDTH: 71; HEIGHT: 96;}
+        #cardh21 {POSITION: absolute; TOP:307; LEFT:430; Z-INDEX: 121; WIDTH: 71; HEIGHT: 96;}
+        #cardh22 {POSITION: absolute; TOP:307; LEFT:450; Z-INDEX: 122; WIDTH: 71; HEIGHT: 96;}
+        #cardh23 {POSITION: absolute; TOP:307; LEFT:470; Z-INDEX: 123; WIDTH: 71; HEIGHT: 96;}
+        #cardh24 {POSITION: absolute; TOP:307; LEFT:490; Z-INDEX: 124; WIDTH: 71; HEIGHT: 96;}
+        #cardh25 {POSITION: absolute; TOP:307; LEFT:510; Z-INDEX: 125; WIDTH: 71; HEIGHT: 96;}
+        #cardh26 {POSITION: absolute; TOP:307; LEFT:530; Z-INDEX: 126; WIDTH: 71; HEIGHT: 96;}
+        #cardh27 {POSITION: absolute; TOP:307; LEFT:550; Z-INDEX: 127; WIDTH: 71; HEIGHT: 96;}
+        #cardh28 {POSITION: absolute; TOP:307; LEFT:570; Z-INDEX: 128; WIDTH: 71; HEIGHT: 96;}
+        #cardh29 {POSITION: absolute; TOP:307; LEFT:590; Z-INDEX: 129; WIDTH: 71; HEIGHT: 96;}
+        #cardh30 {POSITION: absolute; TOP:307; LEFT:610; Z-INDEX: 130; WIDTH: 71; HEIGHT: 96;}
+        #cardh31 {POSITION: absolute; TOP:307; LEFT:630; Z-INDEX: 131; WIDTH: 71; HEIGHT: 96;}
+        #cardh32 {POSITION: absolute; TOP:307; LEFT:650; Z-INDEX: 132; WIDTH: 71; HEIGHT: 96;}
+        #cardh33 {POSITION: absolute; TOP:307; LEFT:670; Z-INDEX: 133; WIDTH: 71; HEIGHT: 96;}
+        #cardh34 {POSITION: absolute; TOP:307; LEFT:690; Z-INDEX: 134; WIDTH: 71; HEIGHT: 96;}
+        #cardh35 {POSITION: absolute; TOP:307; LEFT:710; Z-INDEX: 135; WIDTH: 71; HEIGHT: 96;}
+
+
+    </style>
+    <LINK href="http://www.softholm.com/st.css" type="text/css" rel="stylesheet">
+</HEAD>
+
+<body  bgcolor="FFFFFF" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0">
+
+<script language="JavaScript">
+  <!--
+  version = 1.0;
+  // -->
+</script>
+<script language="JavaScript1.2">
+  <!--
+  version = 1.2;
+  // -->
+</script>
+<script language="JavaScript">
+  <!--
+  if (version==1.0)
+    document.write("<p>К сожалению, Ваш браузер не поддерживает JavaScript 1.2.</p>"
+      + "<p>Эта игра работает в Internet Explorer 5 и выше или Netscape Navigator 6 и выше.</p>");
+  // -->
+</script>
+
+<DIV id="cardc0"><IMG src=/static/dot.gif width=71 height=96 name="icardc0"></DIV>
+<DIV id="cardc1"><IMG src=/static/dot.gif width=71 height=96 name="icardc1"></DIV>
+<DIV id="cardc2"><IMG src=/static/dot.gif width=71 height=96 name="icardc2"></DIV>
+<DIV id="cardc3"><IMG src=/static/dot.gif width=71 height=96 name="icardc3"></DIV>
+<DIV id="cardc4"><IMG src=/static/dot.gif width=71 height=96 name="icardc4"></DIV>
+<DIV id="cardc5"><IMG src=/static/dot.gif width=71 height=96 name="icardc5"></DIV>
+<DIV id="cardc6"><IMG src=/static/dot.gif width=71 height=96 name="icardc6"></DIV>
+<DIV id="cardc7"><IMG src=/static/dot.gif width=71 height=96 name="icardc7"></DIV>
+<DIV id="cardc8"><IMG src=/static/dot.gif width=71 height=96 name="icardc8"></DIV>
+<DIV id="cardc9"><IMG src=/static/dot.gif width=71 height=96 name="icardc9"></DIV>
+<DIV id="cardc10"><IMG src=/static/dot.gif width=71 height=96 name="icardc10"></DIV>
+<DIV id="cardc11"><IMG src=/static/dot.gif width=71 height=96 name="icardc11"></DIV>
+<DIV id="cardc12"><IMG src=/static/dot.gif width=71 height=96 name="icardc12"></DIV>
+<DIV id="cardc13"><IMG src=/static/dot.gif width=71 height=96 name="icardc13"></DIV>
+<DIV id="cardc14"><IMG src=/static/dot.gif width=71 height=96 name="icardc14"></DIV>
+<DIV id="cardc15"><IMG src=/static/dot.gif width=71 height=96 name="icardc15"></DIV>
+<DIV id="cardc16"><IMG src=/static/dot.gif width=71 height=96 name="icardc16"></DIV>
+<DIV id="cardc17"><IMG src=/static/dot.gif width=71 height=96 name="icardc17"></DIV>
+<DIV id="cardc18"><IMG src=/static/dot.gif width=71 height=96 name="icardc18"></DIV>
+<DIV id="cardc19"><IMG src=/static/dot.gif width=71 height=96 name="icardc19"></DIV>
+<DIV id="cardc20"><IMG src=/static/dot.gif width=71 height=96 name="icardc20"></DIV>
+<DIV id="cardc21"><IMG src=/static/dot.gif width=71 height=96 name="icardc21"></DIV>
+<DIV id="cardc22"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc22"></DIV>
+<DIV id="cardc23"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc23"></DIV>
+<DIV id="cardc24"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc24"></DIV>
+<DIV id="cardc25"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc25"></DIV>
+<DIV id="cardc26"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc26"></DIV>
+<DIV id="cardc27"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc27"></DIV>
+<DIV id="cardc28"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc28"></DIV>
+<DIV id="cardc29"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc29"></DIV>
+<DIV id="cardc30"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc30"></DIV>
+<DIV id="cardc31"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc31"></DIV>
+<DIV id="cardc32"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc32"></DIV>
+<DIV id="cardc33"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc33"></DIV>
+<DIV id="cardc34"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc34"></DIV>
+<DIV id="cardc35"><IMG src=/static/img/dot.gif width=71 height=96 name="icardc35"></DIV>
+
+<DIV id="cardw0"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw0"></DIV>
+<DIV id="cardw1"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw1"></DIV>
+<DIV id="cardw2"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw2"></DIV>
+<DIV id="cardw3"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw3"></DIV>
+<DIV id="cardw4"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw4"></DIV>
+<DIV id="cardw5"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw5"></DIV>
+<DIV id="cardw6"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw6"></DIV>
+<DIV id="cardw7"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw7"></DIV>
+<DIV id="cardw8"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw8"></DIV>
+<DIV id="cardw9"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw9"></DIV>
+<DIV id="cardw10"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw10"></DIV>
+<DIV id="cardw11"><IMG src=/static/img/dot.gif width=71 height=96 name="icardw11"></DIV>
+
+<DIV id="btn"><A href="" onmouseover="showBtn(1); return true" onmouseout="showBtn(0); return true" onclick="clickBtn(); return false;"><IMG name="ibtn" src=dot.gif width=100 height=18 border=0></A></DIV> <DIV id="kozyr"><IMG src=dot.gif width=71 height=96 name="ikozyr"></DIV>
+<DIV id="coloda"><IMG src=/static/img/dot.gif width=71 height=96 name="icoloda"></DIV>
+<DIV id="zkozyr"><IMG src=/static/img/dot.gif width=39 height=39 name="izkozyr"></DIV>
+
+<DIV id="cardh0"><A href="" onmouseover="showCardUp(0); return true" onmouseout="showCardDown(0); return true" onclick="clickCard(0); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh0"></A></DIV>
+<DIV id="cardh1"><A href="" onmouseover="showCardUp(1); return true" onmouseout="showCardDown(1); return true" onclick="clickCard(1); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh1"></A></DIV>
+<DIV id="cardh2"><A href="" onmouseover="showCardUp(2); return true" onmouseout="showCardDown(2); return true" onclick="clickCard(2); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh2"></A></DIV>
+<DIV id="cardh3"><A href="" onmouseover="showCardUp(3); return true" onmouseout="showCardDown(3); return true" onclick="clickCard(3); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh3"></A></DIV>
+<DIV id="cardh4"><A href="" onmouseover="showCardUp(4); return true" onmouseout="showCardDown(4); return true" onclick="clickCard(4); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh4"></A></DIV>
+<DIV id="cardh5"><A href="" onmouseover="showCardUp(5); return true" onmouseout="showCardDown(5); return true" onclick="clickCard(5); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh5"></A></DIV>
+<DIV id="cardh6"><A href="" onmouseover="showCardUp(6); return true" onmouseout="showCardDown(6); return true" onclick="clickCard(6); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh6"></A></DIV>
+<DIV id="cardh7"><A href="" onmouseover="showCardUp(7); return true" onmouseout="showCardDown(7); return true" onclick="clickCard(7); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh7"></A></DIV>
+<DIV id="cardh8"><A href="" onmouseover="showCardUp(8); return true" onmouseout="showCardDown(8); return true" onclick="clickCard(8); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh8"></A></DIV>
+<DIV id="cardh9"><A href="" onmouseover="showCardUp(9); return true" onmouseout="showCardDown(9); return true" onclick="clickCard(9); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh9"></A></DIV>
+<DIV id="cardh10"><A href="" onmouseover="showCardUp(10); return true" onmouseout="showCardDown(10); return true" onclick="clickCard(10); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh10"></A></DIV>
+<DIV id="cardh11"><A href="" onmouseover="showCardUp(11); return true" onmouseout="showCardDown(11); return true" onclick="clickCard(11); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh11"></A></DIV>
+<DIV id="cardh12"><A href="" onmouseover="showCardUp(12); return true" onmouseout="showCardDown(12); return true" onclick="clickCard(12); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh12"></A></DIV>
+<DIV id="cardh13"><A href="" onmouseover="showCardUp(13); return true" onmouseout="showCardDown(13); return true" onclick="clickCard(13); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh13"></A></DIV>
+<DIV id="cardh14"><A href="" onmouseover="showCardUp(14); return true" onmouseout="showCardDown(14); return true" onclick="clickCard(14); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh14"></A></DIV>
+<DIV id="cardh15"><A href="" onmouseover="showCardUp(15); return true" onmouseout="showCardDown(15); return true" onclick="clickCard(15); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh15"></A></DIV>
+<DIV id="cardh16"><A href="" onmouseover="showCardUp(16); return true" onmouseout="showCardDown(16); return true" onclick="clickCard(16); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh16"></A></DIV>
+<DIV id="cardh17"><A href="" onmouseover="showCardUp(17); return true" onmouseout="showCardDown(17); return true" onclick="clickCard(17); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh17"></A></DIV>
+<DIV id="cardh18"><A href="" onmouseover="showCardUp(18); return true" onmouseout="showCardDown(18); return true" onclick="clickCard(18); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh18"></A></DIV>
+<DIV id="cardh19"><A href="" onmouseover="showCardUp(19); return true" onmouseout="showCardDown(19); return true" onclick="clickCard(19); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh19"></A></DIV>
+<DIV id="cardh20"><A href="" onmouseover="showCardUp(20); return true" onmouseout="showCardDown(20); return true" onclick="clickCard(20); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh20"></A></DIV>
+<DIV id="cardh21"><A href="" onmouseover="showCardUp(21); return true" onmouseout="showCardDown(21); return true" onclick="clickCard(21); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh21"></A></DIV>
+<DIV id="cardh22"><A href="" onmouseover="showCardUp(22); return true" onmouseout="showCardDown(22); return true" onclick="clickCard(22); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh22"></A></DIV>
+<DIV id="cardh23"><A href="" onmouseover="showCardUp(23); return true" onmouseout="showCardDown(23); return true" onclick="clickCard(23); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh23"></A></DIV>
+<DIV id="cardh24"><A href="" onmouseover="showCardUp(24); return true" onmouseout="showCardDown(24); return true" onclick="clickCard(24); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh24"></A></DIV>
+<DIV id="cardh25"><A href="" onmouseover="showCardUp(25); return true" onmouseout="showCardDown(25); return true" onclick="clickCard(25); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh25"></A></DIV>
+<DIV id="cardh26"><A href="" onmouseover="showCardUp(26); return true" onmouseout="showCardDown(26); return true" onclick="clickCard(26); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh26"></A></DIV>
+<DIV id="cardh27"><A href="" onmouseover="showCardUp(27); return true" onmouseout="showCardDown(27); return true" onclick="clickCard(27); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh27"></A></DIV>
+<DIV id="cardh28"><A href="" onmouseover="showCardUp(28); return true" onmouseout="showCardDown(28); return true" onclick="clickCard(28); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh28"></A></DIV>
+<DIV id="cardh29"><A href="" onmouseover="showCardUp(29); return true" onmouseout="showCardDown(29); return true" onclick="clickCard(29); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh29"></A></DIV>
+<DIV id="cardh30"><A href="" onmouseover="showCardUp(30); return true" onmouseout="showCardDown(30); return true" onclick="clickCard(30); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh30"></A></DIV>
+<DIV id="cardh31"><A href="" onmouseover="showCardUp(31); return true" onmouseout="showCardDown(31); return true" onclick="clickCard(31); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh31"></A></DIV>
+<DIV id="cardh32"><A href="" onmouseover="showCardUp(32); return true" onmouseout="showCardDown(32); return true" onclick="clickCard(32); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh32"></A></DIV>
+<DIV id="cardh33"><A href="" onmouseover="showCardUp(33); return true" onmouseout="showCardDown(33); return true" onclick="clickCard(33); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh33"></A></DIV>
+<DIV id="cardh34"><A href="" onmouseover="showCardUp(34); return true" onmouseout="showCardDown(34); return true" onclick="clickCard(34); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh34"></A></DIV>
+<DIV id="cardh35"><A href="" onmouseover="showCardUp(35); return true" onmouseout="showCardDown(35); return true" onclick="clickCard(35); return false;"><IMG src=dot.gif width=71 height=96 border=0 name="icardh35"></A></DIV>
+
+<DIV id="panel1">
+    <CENTER><FORM name=Q>
+
+            <input type=BUTTON class=button value="Заново" onClick="gameInit0()">
+            <input type=BUTTON class=button name=c1 value="Выигрыши: 0">
+            <input type=BUTTON class=button name=c2 value="Ничьи: 0">
+            <input type=BUTTON class=button name=c3 value="Проигрыши: 0">
+            <input type=BUTTON class=button name=c4 value="В колоде: 36">
+            <input type=BUTTON class=button name=c5 value="Лучшие" onClick="bestTable()">
+        </FORM></CENTER></div>
+
+<script language="JavaScript1.2">
+  /*if (navigator.appName == "Netscape") {
+layerRef="document.layers";
+styleSwitch="";
+brouz="n";
+}
+else { */
+  layerRef="document.all";
+  styleSwitch=".style";
+  brouz="ie";
+  //}
+
+  gameStat = 0; //0-нет игры, 1-мы отбиваем, 2-комп отбивает
+
+  btn0 = new Image(100, 30);
+  btn0.src = "/static/img/get_0.gif";
+  btn1 = new Image(100, 30);
+  btn1.src = "/static/img/get_1.gif";
+  btn2 = new Image(100, 30);
+  btn2.src = "/static/img/vse_0.gif";
+  btn3 = new Image(100, 30);
+  btn3.src = "/static/img/vse_1.gif";
+
+  cardback = new Image(71, 96);
+  cardback.src = "/static/img/back.gif";
+  var cards = new Array();
+  var kozyrs = new Array();
+
+  var computer = new Array();
+  var computerCnt = 0; //число карт компа
+  var human = new Array();
+  var humanCnt = 0; //число карт человека
+  var coloda = new Array();
+  var lastCard = -1; //последняя карта
+  var kozyr = -1; //масть козыря
+  var work = new Array();
+  var tmpwork = new Array();
+  var lastWork = 0; //последняя карта на кону
+  var winCount=0,drawCount=0,fallCount=0,firstTurn=0;
+  var tab=new Array (5);
+
+  if (brouz == "n") {
+    eval(layerRef+'["coloda"].document.images[0].src = cardback.src');
+  }
+  else { document.images.icoloda.src = cardback.src; }
+
+  for (var i = 0; i < 36; i++) {
+    cards[i] = new Image(71, 96);
+    cards[i].src = "/static/img/" + i + ".gif";
+  }
+  for (var i = 0; i < 4; i++) {
+    kozyrs[i] = new Image(39, 39);
+    kozyrs[i].src = "/static/img/k" + i + ".gif";
+  }
+
+  function cardToH(card) { //карту человеку
+    if (card >= 0) human[humanCnt++] = card;
+  }
+
+  function cardToC(card) { //карту компу
+    if (card >= 0) computer[computerCnt++] = card;
+  }
+
+  function showBtn(stat) { //щелчок по кнопке
+    if (gameStat == 1) {
+      if (brouz == "n") {
+        if (stat == 0) { document.layers.btn.document.images[0].src = btn0.src; }
+        else { document.layers.btn.document.images[0].src = btn1.src; }
+      }
+      else {
+        if (stat == 0) { document.images.ibtn.src = btn0.src; }
+        else { document.images.ibtn.src = btn1.src; }
+      }
+    }
+    else if (gameStat == 2) {
+      if (brouz == "n") {
+        if (stat == 0) eval(layerRef+'["btn"].document.images[0].src = btn2.src');
+        else eval(layerRef+'["btn"].document.images[0].src = btn3.src');
+      }
+      else {
+        if (stat == 0) document.images.ibtn.src = btn2.src;
+        else document.images.ibtn.src = btn3.src;
+      }
+    }
+  }
+
+  function showCardUp(num) { //наведение мыши на карту
+    if (gameStat == 0) return;
+    eval(layerRef+'["cardh" + num].top = 267');
+  }
+
+  function showCardDown(num) { //показать карту внизу
+    eval(layerRef+'["cardh" + num].top = 277');
+  }
+
+  function showWorkCards() { //показать рабочие карты
+    for (var i = 0; i < 12; i++) {
+      if (work[i] >= 0) {
+        if (brouz == "n") { eval(layerRef+'["cardw" + i].document.images[0].src = cards[work[i]].src'); }
+        else { document.images["icardw" + i].src = cards[work[i]].src; }
+        eval(layerRef+'["cardw" + i]'+styleSwitch+'.visibility = "visible"');
+      }
+      else eval(layerRef+'["cardw" + i]'+styleSwitch+'.visibility = "hidden"');
+    }
+    if (work[0] < 0) eval(layerRef+'["btn"]'+styleSwitch+'.visibility = "hidden"');
+    else {
+      showBtn(0);
+      eval(layerRef+'["btn"]'+styleSwitch+'.visibility = "visible"');
+    }
+  }
+
+  function sortCompCards() { //сортировать карты компа
+    var tc = 0;
+    var i = 0;
+    var i1 = 0;
+    var c = 0;
+    for (i = 0; i < 36; i++) {
+      if (computer[i] >= 0) {
+        if (i != tc) {
+          computer[tc] = computer[i];
+          computer[i] = -1;
+        }
+        tc++;
+      }
+    }
+    tc--;
+    for (i = tc; i > 0; i--) {
+      for (i1 = 0; i1 < i; i1++) {
+        if (convCard(computer[i1]) > convCard(computer[i1 + 1])) {
+          c = computer[i1];
+          computer[i1] = computer[i1 + 1];
+          computer[i1 + 1] = c;
+        }
+      }
+    }
+  }
+
+  function showCompCards() { //показать карты компа
+    var i = 0;
+    sortCompCards();
+    for (i = 0; i < computerCnt; i++) {
+      eval(layerRef+'["cardc" + i]'+styleSwitch+'.visibility = "visible"');
+    }
+    for (i; i < 36; i++) eval(layerRef+'["cardc" + i]'+styleSwitch+'.visibility = "hidden"');
+//!!!debug
+// for (i = 0; i < computerCnt; i++) {
+//  if (brouz == "n") { eval(layerRef+'["cardc" + i].document.images[0].src = cards[computer[i]].src'); }
+//  else { document.images["icardc" + i].src = cards[computer[i]].src; }
+// }
+//!!!
+  }
+
+  function convCard(num) { //преобразовать номер с учетом козырей
+    var mast = Math.floor(num / 9);
+    if (mast == kozyr) return (num % 9) + 36;
+    else return (mast + (num % 9) * 4);
+  }
+
+  function sortHumanCards() { //сортировать карты человека
+    var tc = 0;
+    var i = 0;
+    var i1 = 0;
+    var c = 0;
+    for (i = 0; i < 36; i++) {
+      if (human[i] >= 0) {
+        if (i != tc) {
+          human[tc] = human[i];
+          human[i] = -1;
+        }
+        tc++;
+      }
+    }
+    tc--;
+    for (i = tc; i > 0; i--) {
+      for (i1 = 0; i1 < i; i1++) {
+        if (convCard(human[i1]) > convCard(human[i1 + 1])) {
+          c = human[i1];
+          human[i1] = human[i1 + 1];
+          human[i1 + 1] = c;
+        }
+      }
+    }
+  }
+
+  function showHumanCards() { //показать карты человека
+    var i = 0;
+    sortHumanCards();
+    for (i = 35; i >= humanCnt; i--) eval(layerRef+'["cardh" + i]'+styleSwitch+'.visibility = "hidden"');
+    for (i; i >= 0; i--) {
+      if (brouz == "n") { eval(layerRef+'["cardh" + i].document.images[0].src = cards[human[i]].src'); }
+      else { document.images["icardh" + i].src = cards[human[i]].src; }
+      eval(layerRef+'["cardh" + i]'+styleSwitch+'.visibility = "visible"');
+    }
+  }
+
+  function  showLastCard() { //показать, сколько карт осталось
+    var l=lastCard+1;
+    if (l<0) l=0;
+    document.Q.c4.value = 'В колоде: '+ l;
+  }
+
+  function showColoda() { //показать колоду
+    if (lastCard < 0) {
+      eval(layerRef+'["kozyr"]'+styleSwitch+'.visibility = "hidden"');
+      eval(layerRef+'["coloda"]'+styleSwitch+'.visibility = "hidden"');
+      if (brouz == "n") { eval(layerRef+'["zkozyr"].document.images[0].src = kozyrs[kozyr].src'); }
+      else { document.images.izkozyr.src = kozyrs[kozyr].src; }
+      eval(layerRef+'["zkozyr"]'+styleSwitch+'.visibility = "visible"');
+    }
+    else if (lastCard == 0) {
+      eval(layerRef+'["zkozyr"]'+styleSwitch+'.visibility = "hidden"');
+      eval(layerRef+'["coloda"]'+styleSwitch+'.visibility = "hidden"');
+      if (brouz == "n") { eval(layerRef+'["kozyr"].document.images[0].src = cards[coloda[0]].src'); }
+      else { document.images.ikozyr.src = cards[coloda[0]].src; }
+      eval(layerRef+'["kozyr"]'+styleSwitch+'.visibility = "visible"');
+    }
+    else {
+      eval(layerRef+'["zkozyr"]'+styleSwitch+'.visibility = "hidden"');
+      if (brouz == "n") { eval(layerRef+'["kozyr"].document.images[0].src = cards[coloda[0]].src'); }
+      else { document.images.ikozyr.src = cards[coloda[0]].src }
+      eval(layerRef+'["kozyr"]'+styleSwitch+'.visibility = "visible"');
+      eval(layerRef+'["coloda"]'+styleSwitch+'.visibility = "visible"');
+    }
+  }
+
+  function sdatCards() { //сдать карты
+    if (gameStat == 1) {
+      while ((computerCnt < 6) && (lastCard >= 0)) cardToC(coloda[lastCard--]);
+      while ((humanCnt < 6) && (lastCard >= 0)) cardToH(coloda[lastCard--]);
+    }
+    else {
+      while ((humanCnt < 6) && (lastCard >= 0)) cardToH(coloda[lastCard--]);
+      while ((computerCnt < 6) && (lastCard >= 0)) cardToC(coloda[lastCard--]);
+    }
+    showLastCard();
+  }
+
+  function checkEnd() { //проверить на окончание
+    return (lastCard < 0) && ((humanCnt == 0) || (computerCnt == 0));
+  }
+
+  function commonCount() {
+    document.Q.c1.value = 'Выигрыши: ' + winCount;
+    document.Q.c2.value = 'Ничьи: '+ drawCount;
+    document.Q.c3.value = 'Проигрыши: '+ fallCount;
+  }
+
+  function clearWork() { //основной ход
+    //очистить кон
+    for (var i = 0; i < 12; i++) {
+      tmpwork[i]=work[i];
+      work[i] = -1;
+    }
+    lastWork = 0;
+    showWorkCards();
+
+    //следующие карты
+    sdatCards();
+    showColoda();
+    showHumanCards();
+    showCompCards();
+
+    //проверить на окончание
+    if (checkEnd()) {
+      gameStat = 0;
+      showBtn(0);
+      for (var i = 0; i < 12; i++) work[i] = tmpwork[i];
+      showWorkCards();
+      if ((humanCnt == 0) && (computerCnt == 0)) {
+        alert("Ничья!");
+        drawCount++; commonCount();
+        firstTurn=0;
+        gameInit(0);
+      }
+      else if (humanCnt == 0) {
+        for (i = 0; i < computerCnt; i++) {
+          if (brouz == "n") { eval(layerRef+'["cardc" + i].document.images[0].src = cards[computer[i]].src'); }
+          else { document.images["icardc" + i].src = cards[computer[i]].src; }
+        }
+        showCompCards();
+        alert("Вы выиграли!");
+        winCount++; commonCount();
+        firstTurn=2;
+        gameInit(2);
+      }
+      else if (computerCnt == 0) {
+        alert("Вы проиграли!");
+        fallCount++; commonCount();
+        firstTurn=1;
+        gameInit(1);
+      }
+      return false;
+    }
+    return true;
+  }
+
+  function checkWork() {
+    if (work[10] >= 0) if (clearWork()) {
+      gameStat = 3 - gameStat;
+      if (gameStat == 1) compHod();
+      return false;
+    }
+    return true;
+  }
+
+  function compMinCard(mast, mincard) { //минимальная карта компа
+    var mc = 0;
+    var i = 0;
+    if (mast >= 0) {
+      mc = -1;
+      for (i = 0; i < computerCnt; i++) if ((Math.floor(computer[i] / 9) == mast) && ((computer[i] % 9) > mincard)) {
+        mc = i;
+        break;
+      }
+      if ((mc < 0) && (mast != kozyr)) mc = compMinCard(kozyr, -1);
+    }
+    return mc;
+  }
+
+  /*function canBeat(num) { //можно ли бить картой num карту lastWork
+   var c = work[lastWork * 2];
+   if (c < 0) return false;
+   if (Math.floor(num / 9) == Math.floor(c / 9)) return (num % 9) > (c % 9);
+   else return Math.floor(num / 9) == kozyr;
+  }*/
+
+  function allBeat() { //все на кону бито?
+    var r = true;
+    for (var i = 0; i < lastWork; i++) if (work[i * 2 + 1] < 0) { r = false; break; }
+    return r;
+  }
+
+  function getHod() { //сбросить карты с кона компу
+    for (var i = 0; i < 12; i++) if (work[i] >= 0) cardToC(work[i]);
+    clearWork();
+  }
+
+  function clickBtn() { //щелчок по кнопке
+    if (gameStat == 1) { //мы отбиваем
+      for (++lastWork; lastWork < 6; lastWork++) if (!compHod()) break;
+      for (var i = 0; i < 12; i++) if (work[i] >= 0) cardToH(work[i]);
+      if (clearWork()) compHod();
+    }
+    else { //комп отбивает
+      if (!allBeat()) { getHod(); return; }
+      if (clearWork()) { showBtn(1); compHod(); }
+    }
+  }
+
+  function clickCard(num) { //щелчок по карте
+    var c = -1;
+    if (gameStat == 1) { //мы отбиваем
+      var c = work[lastWork * 2];
+      if (c < 0) return;
+      if (Math.floor(human[num] / 9) == Math.floor(c / 9)) {
+        if ((human[num] % 9) < (c % 9)) return;
+      }
+      else if (Math.floor(human[num] / 9) != kozyr) return;
+      work[lastWork * 2 + 1] = human[num];
+      human[num] = -1;
+      humanCnt--;
+      lastWork++;
+      showHumanCards();
+      if (checkEnd()) { clearWork(); return; }
+      if (checkWork()) if (!compHod()) if (clearWork()) gameStat = 2;
+    }
+    else if (gameStat == 2) { //комп отбивает
+      if (lastWork > 0) {
+        c = 0;
+        for (var i = 0; i < lastWork * 2 ; i++) if ((human[num] % 9) == (work[i] % 9)) {
+          c = -1;
+          break;
+        }
+        if (c >= 0) return;
+      }
+      work[lastWork * 2] = human[num];
+      human[num] = -1;
+      humanCnt--;
+      showHumanCards();
+      if (allBeat()) {
+        c = compMinCard(Math.floor(work[lastWork * 2] / 9), work[lastWork * 2] % 9);
+      }
+      if (c < 0) {
+        work[lastWork * 2 + 1] = -1;
+        if (lastWork == 5) { getHod(); return; } //lastWork=5 при броске 6й карты; была ошибка 6
+      }
+      else {
+        work[lastWork * 2 + 1] = computer[c];
+        computer[c] = -1;
+        computerCnt--;
+      }
+      lastWork++;
+      showWorkCards();
+      showCompCards();
+      if (checkEnd()) clearWork();
+      else checkWork();
+    }
+  }
+
+  function gameInit(stat) { //начало игры
+    var i = 0;
+    var i1 = 0;
+    var c = -1;
+    for (i = 0; i < 36; i++) {
+      computer[i] = -1;
+      human[i] = -1;
+      coloda[i] = -1;
+      if (brouz == "n") {
+        eval(layerRef+'["cardc" + i].document.images[0].src = cardback.src');
+        eval(layerRef+'["cardh" + i].document.images[0].src = cardback.src');
+      }
+      else {
+        document.images["icardc" + i].src  = cardback.src
+        document.images["icardh" + i].src  = cardback.src
+      }
+    }
+    for (i = 0; i < 12; i++) work[i] = -1;
+    lastWork = 0;
+
+    //тасуем карты
+    for (i = 0; i < 36; i++) {
+      c = -1;
+      while (c < 0) {
+        c = Math.floor(Math.random() * 36);
+        for (i1 = 0; i1 < i; i1++) if (coloda[i1] == c) {
+          c = -1;
+          break;
+        }
+      }
+      coloda[i] = c;
+    }
+    lastCard = 35;
+
+    //сдаем
+    computerCnt = 0;
+    humanCnt = 0;
+    for (i = 0; i < 6; i++) {
+      cardToH(coloda[lastCard]);
+      coloda[lastCard--] = -1;
+      cardToC(coloda[lastCard]);
+      coloda[lastCard--] = -1;
+    }
+    kozyr = Math.floor(coloda[0] / 9);
+    showLastCard();
+
+    //чей ход?
+    if (stat == 0) { //у кого меньший козырь
+      c = 36;
+      for (i = 0; i < 6; i++) if ((Math.floor(human[i] / 9) == kozyr) && (human[i] < c)) c = human[i];
+      i1 = 36;
+      for (i = 0; i < 6; i++) if ((Math.floor(computer[i] / 9) == kozyr) && (computer[i] < i1)) i1 = computer[i];
+      if (c > i1) gameStat = 1;
+      else gameStat = 2;
+      firstTurn=gameStat;
+    }
+    else gameStat = stat; //иначе учим дурака
+
+    //начали:
+    showColoda();
+    showWorkCards();
+    showCompCards();
+    showHumanCards();
+    showBtn(0);
+    Save();
+    if (gameStat == 1) compHod();
+  }
+
+  function compHod(stat) { //ход компа
+    var c = 0;
+    if (lastWork == 0) {
+      if ( (lastCard<1) && ((computerCnt==2) || (computerCnt==3)) ) {
+        c=1;
+      }
+      else c = compMinCard(-1, 0);
+    }
+    else {
+      c = -1;
+      for (var i = 0; i < computerCnt; i++) {
+        if (Math.floor(computer[i] / 9) != kozyr)
+          for (var w = 0; w < 12 ; w++) if ((work[w] >= 0) && ((computer[i] % 9) == (work[w] % 9)) ) {
+            c = i;
+            break;
+          }
+        if (c >= 0) break;
+      }
+    }
+    gameStat = 1;
+    if (c < 0) return false;
+    work[lastWork * 2] = computer[c];
+    computer[c] = -1;
+    computerCnt--;
+
+    showWorkCards();
+    showCompCards();
+    return true;
+  }
+
+  //ниже часть для кукизов
+  var caution = false;
+
+  function setCookie(name, value, expires, path, domain, secure) {
+    var curCookie = name + "=" + escape(value) +
+      ((expires) ? "; expires=" + expires.toGMTString() : "") +
+      ((path) ? "; path=" + path : "") +
+      ((domain) ? "; domain=" + domain : "") +
+      ((secure) ? "; secure" : "");
+    if (!caution || (name + "=" + escape(value)).length <= 4000) document.cookie = curCookie;
+    else if (confirm("Файл с сохраненной информацией превышает 4 Кб и будет обрезан!")) document.cookie = curCookie;
+  }
+
+  function getCookie(name) {
+    var prefix = name + "=";
+    var cookieStartIndex = document.cookie.indexOf(prefix);
+    if (cookieStartIndex == -1) return null;
+    var cookieEndIndex = document.cookie.indexOf(";", cookieStartIndex + prefix.length);
+    if (cookieEndIndex == -1) cookieEndIndex = document.cookie.length;
+    return unescape(document.cookie.substring(cookieStartIndex + prefix.length, cookieEndIndex));
+  }
+
+  function fixDate(date) {
+    var base = new Date(0);
+    var skew = base.getTime();
+    if (skew > 0) date.setTime(date.getTime() - skew);
+  }
+
+  function Save() {
+    var now = new Date();
+    fixDate(now);
+    now.setTime(now.getTime() + 366 * 24 * 60 * 60 * 1000);
+    setCookie('w', winCount, now);
+    setCookie('d', drawCount, now);
+    setCookie('f', fallCount, now);
+    setCookie('ft', firstTurn, now);
+    for (var i=0; i<5; i++) setCookie("tb"+(i+1), tab[i], now);
+  }
+
+  function today () {
+    var d=new Date();
+    var day=d.getDate();
+    if (day<10) day='0'+day;
+    var mon=d.getMonth()+1
+    if (mon<10) mon='0'+mon;
+    var y=d.getYear();
+    if (y<1900) y+=1900;
+    return (''+day+'/'+mon+'/'+y);
+  }
+
+  function Load () {
+    var win=getCookie ("w");
+    var draw=getCookie ("d");
+    var fall=getCookie ("f");
+    var first=getCookie ("ft");
+    for (var i=0; i<5; i++) tab[i]=getCookie("tb"+(i+1));
+    if (!tab[0]) {
+      var s=today();
+      for (var i=0; i<5; i++) tab[i]='нет: 0 (0/0/0), '+s;
+    }
+    if (!isNaN(parseInt (win))) {
+      winCount=parseInt (win);
+      drawCount=parseInt (draw);
+      fallCount=parseInt (fall);
+      firstTurn=parseInt (first);
+    }
+    commonCount();
+  }
+
+  function gameInit0 () {
+    var t=false;
+    if ((winCount==0) && (drawCount==0) && (fallCount==0)) t=true;
+    else t=window.confirm("Вы уверены, что хотите начать все заново? Статистика об играх будет сброшена!");
+    if (t==true) {
+      var balls=winCount-fallCount;
+      checkBest (balls,winCount);
+      winCount=drawCount=fallCount=0;
+      firstTurn=0;
+      commonCount();
+      gameInit (0);
+    }
+  }
+
+  function checkBest (b,w) {
+    var n=-1;
+    for (var i=0; i<5; i++) {
+      var bt1=tab[i].indexOf(' ');
+      var tab0=tab[i].substring(bt1+1,tab[i].length-bt1);
+      bt1=parseInt(tab0.indexOf(' '));
+      var balls1=parseInt(tab0.substring (0,bt1));
+      var wins1=parseInt(tab0.substring (bt1+1,tab0.length-bt1));
+      if ( (b>balls1) || ((b==balls1) && (w>=wins1))) { n=i; break; }
+    }
+    if (n>-1) {
+      var name1='';
+      while (name1=='') {
+        name1=window.prompt ('Вы вошли в пятерку лучших игроков на этой машине!\r\nПожалуйста, введите Ваше имя:','');
+        if ((name1=='') || (name1==null)) {
+          name1='';
+          window.alert ("Введенное имя не должно быть пустым. Нажмите OK для повтора");
+        }
+        else if (name1.length > 20) {
+          window.alert ("Введенное имя слишком длинное и будет обрезано!");
+          name1=name1.substring (0,20);
+        }
+      }
+      for (var i=0; i<name1.length; i++) if (name1.charAt(i)==' ') name1=name1.substring(0,i)+'_'+name1.substring(i+1,name1.length);
+      for (var j=4; j>n; j--) tab[j]=tab[j-1];
+      var s=today();
+      tab[n]=''+name1+': '+b+' ('+winCount+'/'+drawCount+'/'+fallCount+'), '+s;
+    }
+  }
+
+  function bestTable() {
+    var s='Таблица лучших результатов:\r\nИмя: очки (выигрыши/ничьи/поражения), дата\r\n';
+    for (var i=0; i<5; i++) s+= tab[i] +'\r\n';
+    window.alert (s);
+  }
+
+  //главная п/п
+  Load();
+  gameInit(firstTurn);
+
+</script>
+
+
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+<br><br>
+
+
+
+<h1 align=center>Подкидной дурак на ява</h1>
+
+<table width="95%" border=0 align=center>
+    <tr><td valign="top">
+            <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+
+            &nbsp; &nbsp;
+            &nbsp;
+            &nbsp; &nbsp;
+
+
+        </td>
+
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        <td valign=top>
+
+            <p align=justify>
+
+                <b>Подкидной дурак</b> -  игра в карты на ява скрипт онлайн.
+
+
+
+                Напомним простые правлила этой карточной игры, которые знакомы нам  с детства:
+
+                Игроки (вы  и компьютер) получают из колоды по 6 карт и ходят ими по очереди, бросая их на кон.
+
+                Карты вашего компьютерного соперника расположены выше на экране монитора,
+                а ваши 6 карт распроложены чуть ниже.
+                Любую карту можно отбить картой той же масти большей величины или картой с мастью,
+                показанной на кону (козырем).
+
+                Козырем можно побить также другой козырь меньшей величины.
+                Величины карт возрастают в следующей последовательности:
+                6 (шестерка),
+                7 (семерка),
+                8 (восьмерка),
+                9 (девятка),
+                10 (десятка),
+                J (валет),
+                Q (дама),
+                K (король),
+                A (туз).
+
+
+
+
+                Сопернику можно подкидывать карты до тех пор, пока у Вас есть карты той же величины и у него есть хотя бы одна карта.
+
+                Право первого хода принадлежит тому, кто победил в предыдущей партии, а самую первую партию начинает тот, у кого меньший козырь.
+
+
+                После хода игроки, если требуется,
+                набирают карты из колоды до шести штук.
+                Право хода переходит к игроку только в том случае, если он отбил все карты соперника. Выигрывает тот, кто первым сбросил все карты.
+
+                Чтобы завершить свой ход (больше не подкидывать), нажимайте кнопку "Все!".
+                Если ходит компьютер, а Вы не можете отбиться, нажимайте кнопку "Беру".
+                При этом компьютер "на поддачу" может сбросить Вам карты той же величины, что на кону.
+
+
+            <p align=justify>
+                Для старта игры вам необходимо открыть эту веб-страницу в  браузере с поддержкой языка JavaScript 1.2
+                (Internet Explorer 5 и выше, Mozilla Firefox, Netscape Navigator 5 и выше) и включить показ изображений.
+
+            <p align=justify>
+                Успехов в  игре!
+
+        </td></tr>
+</table>
+
+<hr noshade size="1" color=#3438E0 width="95%" >
+
+<br><br>
+
+
+<center>
+    <center>
+        <noindex>
+
+            <script type="text/javascript"><!--
+              google_ad_client = "pub-5953940059149151";
+              google_ad_slot = "3874867967";
+              google_ad_width = 728;
+              google_ad_height = 90;
+              //-->
+            </script>
+            <script type="text/javascript"
+                    src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+            </script>
+            <br>
+            <!--LiveInternet counter--><script language="JavaScript"><!--
+            document.write('<img src="http://counter.yadro.ru/hit?r'+
+              escape(document.referrer)+((typeof(screen)=='undefined')?'':
+                ';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?
+                screen.colorDepth:screen.pixelDepth))+';u'+escape(document.URL)+
+              ';'+Math.random()+
+              '" width=1 height=1 alt="">')//--></script><!--/LiveInternet-->
+
+            <!--LiveInternet logo--><a href="http://www.liveinternet.ru/click" target=_blank><img
+                        src="http://counter.yadro.ru/logo?21.10" border=0
+                        title="LiveInternet"
+                        width=88 height=31></a><!--/LiveInternet-->
+
+            <!--Rating@Mail.ru COUNTEr--><a target=_top
+                                            href="http://top.mail.ru/jump?from=1004022"><img
+                        src="http://d1.c5.bf.a0.top.list.ru/counter?id=1004022;t=57"
+                        border=0 height=31 width=88
+                        alt="Рейтинг@Mail.ru"/></a><!--/COUNTER-->
+
+            <a href="http://top100.rambler.ru/navi/646228/"><img src="http://counter.rambler.ru/top100.cnt?646228" alt="Rambler's Top100" border="0" /></a>
+        </noindex>
+
+</body>
+</html>
